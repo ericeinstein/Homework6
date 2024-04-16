@@ -21,13 +21,13 @@ public class Driver {
         user1.sendMessage(new String[]{"Bob"}, "Hello Bob, how are you?");
         user1.sendMessage(new String[]{"Charlie"}, "Hello Charlie, how are you?");
 
-        // User2 blocks messages from User1
-        user2.blockUser("Alice");
-
         // User3 sends two identical messages to User1 (one will be undone)
         user3.sendMessage(new String[]{"Alice"}, "Hey Alice, how's it going?");
         user3.sendMessage(new String[]{"Alice"}, "Hey Alice, how's it going?");
         user1.undoLastMessage();
+
+        // User2 blocks messages from User1
+        user2.blockUser("Alice");
 
         // User1 attempts to send a message to User2 (blocked)
         user1.sendMessage(new String[]{"Bob"}, "Bob, Can you hear me?");
